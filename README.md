@@ -22,6 +22,7 @@ consultas a PubMed / Crossref / OpenAlex com identificadores de artigos.
 | `consensus` | alinha as três fontes, redecodifica disputas, vota, realinha | código próprio + Whisper | `transcript.json`, `transcript.srt`, `consensus.json` |
 | `references` | estudos da descrição → PubMed/Crossref/OpenAlex; liga falas a estudos | NCBI, Crossref, OpenAlex + LLM local | `references.json` |
 | `analyze` | análise do perfil do projeto | Ollama (Qwen3 30B-A3B) | `analysis.json` |
+| `emphasis` | (tier_list) parte do músculo mais trabalhada, só se dita, com citação verificada | Ollama | `analysis.json` |
 | `render` | documento legível + índice | — | Markdown |
 
 Etapas concluídas são puladas (os arquivos são o cache). `--force <etapas>` refaz.

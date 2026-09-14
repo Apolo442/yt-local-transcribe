@@ -138,6 +138,9 @@ def render_video(vdir: Path) -> Path:
         if ex.get("tier_source") != "transcrição":
             add(f"- ⚠️ **Tier não confirmado na transcrição** (fonte: {ex.get('tier_source', 'LLM')})")
         add(f"- **Foco:** {ex['muscle_focus']}")
+        if ex.get("emphasis"):
+            em = ex["emphasis"]
+            add(f"- **Ênfase principal:** {em['region']} — “{em['quote']}” ({ts_link(em['timestamp'], vid)})")
         add(f"- **Capítulo:** {ts_link(ex['timestamp'], vid)} {ex['chapter']}")
         if ex["reasons"]:
             add("- **Justificativa:**")

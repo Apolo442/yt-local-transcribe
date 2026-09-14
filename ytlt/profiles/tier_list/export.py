@@ -150,6 +150,13 @@ def build(out: Path | None = None) -> Path:
                 "tier_quote": e["tier_quote"].strip("… "), "tier_timestamp_s": tt, "tier_youtube_url": _yt(vid, tt),
                 "chapter_timestamp_s": t, "youtube_url": _yt(vid, t),
                 "muscle_focus": tr_(f"exercises.{ei}.muscle_focus", e["muscle_focus"]),
+                # parte do músculo que o apresentador diz ser a mais trabalhada (null se não foi dito)
+                "emphasis": e.get("emphasis") and {
+                    "region": tr_(f"exercises.{ei}.emphasis", e["emphasis"]["region"]),
+                    "quote": e["emphasis"]["quote"],
+                    "timestamp_s": ts_to_seconds(e["emphasis"]["timestamp"]),
+                    "youtube_url": _yt(vid, ts_to_seconds(e["emphasis"]["timestamp"])),
+                },
                 "reasons": [tr_(f"exercises.{ei}.reasons.{j}", r) for j, r in enumerate(e["reasons"])],
                 "technique_tips": [tr_(f"exercises.{ei}.technique_tips.{j}", x) for j, x in enumerate(e["technique_tips"])],
                 # frases do apresentador citadas literalmente (original apenas)

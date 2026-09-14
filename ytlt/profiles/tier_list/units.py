@@ -22,6 +22,8 @@ def units(vdir: Path) -> dict[str, str]:
     for i, e in enumerate(a["exercises"]):
         out[f"exercises.{i}.name"] = e["name"]
         out[f"exercises.{i}.muscle_focus"] = e["muscle_focus"]
+        if e.get("emphasis"):
+            out[f"exercises.{i}.emphasis"] = e["emphasis"]["region"]
         for j, r in enumerate(e["reasons"]):
             out[f"exercises.{i}.reasons.{j}"] = r
         for j, t in enumerate(e["technique_tips"]):

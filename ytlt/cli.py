@@ -19,7 +19,7 @@ from pathlib import Path
 
 from . import config
 
-STAGES = ["metadata", "audio", "captions", "whisperx", "parakeet", "consensus", "references", "analyze", "render"]
+STAGES = ["metadata", "audio", "captions", "whisperx", "parakeet", "consensus", "references", "analyze", "emphasis", "render"]
 PROJECT_TEMPLATE = """[project]
 name = "{name}"
 # playlist OU lista de vídeos avulsos
@@ -141,6 +141,10 @@ def cmd_run(args) -> None:
                 t0 = time.time()
                 profile.analyze(vdir, force="analyze" in force, progress=log)
                 log(f"  análise ({config.PROFILE}) ok ({time.time() - t0:.0f}s)")
+            if "emphasis" in stages and hasattr(profile, "emphasis"):
+                t0 = time.time()
+                profile.emphasis(vdir, force="emphasis" in force, progress=log)
+                log(f"  ênfase ok ({time.time() - t0:.0f}s)")
             if "render" in stages:
                 log(f"  documento: {profile.render(vdir)}")
         except Exception as exc:
