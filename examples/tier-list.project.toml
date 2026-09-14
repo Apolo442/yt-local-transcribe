@@ -1,0 +1,16 @@
+[project]
+name = "minha-tier-list"
+playlist = "https://www.youtube.com/playlist?list=PLp4G6oBUcv8w8ujRtP5BtvJe8PXBwiTdl"
+videos = []
+profile = "tier_list"
+output_language = "English"
+
+[asr]
+whisper_model = "large-v3"
+compute_type = "float16"
+batch_size = 4
+
+[llm]
+model = "qwen3:30b-a3b-instruct-2507-q4_K_M"
+num_thread = 4
+num_ctx = 8192

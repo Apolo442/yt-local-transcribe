@@ -1,0 +1,16 @@
+[project]
+name = "minhas-aulas"
+# use playlist OU videos
+playlist = ""
+videos = [
+  "https://www.youtube.com/watch?v=VIDEO_ID_1",
+  "https://www.youtube.com/watch?v=VIDEO_ID_2",
+]
+profile = "transcript"   # só transcrição por consenso, sem LLM
+output_language = "English"
+
+[asr]
+whisper_model = "large-v3"
+compute_type = "float16"
+batch_size = 4
+# language = "pt"
