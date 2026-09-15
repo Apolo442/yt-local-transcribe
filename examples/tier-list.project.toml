@@ -1,6 +1,6 @@
 [project]
 name = "minha-tier-list"
-playlist = "https://www.youtube.com/playlist?list=PLp4G6oBUcv8w8ujRtP5BtvJe8PXBwiTdl"
+playlist = "https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
 videos = []
 profile = "tier_list"
 output_language = "English"

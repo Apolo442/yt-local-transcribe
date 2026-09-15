@@ -84,6 +84,24 @@ Transcrição e citações literais ficam sempre no idioma original.
 - [`docs/LESSONS.md`](docs/LESSONS.md) — o que deu errado nos testes e como foi resolvido
 - [`docs/PROFILES.md`](docs/PROFILES.md) — escrever um perfil de análise
 
+## Licenças
+
+O código deste repositório é MIT ([`LICENSE`](LICENSE)). Os modelos e ferramentas usados têm licenças próprias,
+baixados por você na primeira execução:
+
+| Componente | Uso | Licença |
+|---|---|---|
+| [OpenAI Whisper](https://github.com/openai/whisper) large-v3 (via [faster-whisper](https://github.com/SYSTRAN/faster-whisper)) | reconhecimento principal | MIT |
+| [WhisperX](https://github.com/m-bain/whisperX) | lote, VAD e alinhamento | BSD-2-Clause |
+| [pyannote.audio](https://github.com/pyannote/pyannote-audio) | detecção de voz | MIT |
+| [wav2vec2 base 960h](https://pytorch.org/audio/stable/pipelines.html) (torchaudio) | alinhamento por palavra | ver termos do modelo no torchaudio |
+| [NVIDIA Parakeet TDT 0.6B v3](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3) (via [onnx-asr](https://github.com/istupakov/onnx-asr)) | segundo reconhecedor | CC-BY-4.0 (modelo) · MIT (onnx-asr) |
+| [Silero VAD](https://github.com/snakers4/silero-vad) | detecção de voz para o Parakeet | MIT |
+| [Qwen3](https://huggingface.co/Qwen) via [Ollama](https://ollama.com) | análise | Apache 2.0 |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | download | Unlicense |
+
+Confira os termos de cada modelo antes de redistribuir resultados comercialmente.
+
 ## Uso responsável
 
 A ferramenta processa conteúdo de terceiros. Transcrições completas são para uso pessoal; ao publicar algo

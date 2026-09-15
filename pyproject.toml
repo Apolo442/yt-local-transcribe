@@ -3,6 +3,7 @@ name = "yt-local-transcribe"
 version = "0.1.0"
 description = "Transcrição de vídeos do YouTube 100% local e auditável: consenso de reconhecedores de fala (WhisperX + Parakeet + legendas), análise com LLM local verificada contra a fala, referências e tradução revisada."
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "onnx-asr[hub]>=0.12.0",
